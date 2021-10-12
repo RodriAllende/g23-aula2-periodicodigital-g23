@@ -1,107 +1,103 @@
 <!DOCTYPE html>
-<html lang="es" class="no-js">
-
+<html lang="en">
 <head>
+	<meta charset="UTF-8">
+	<meta name="formulario" content="width=device-width, initial-scale=1.0">
+	 
+	<link rel="stylesheet" href="/css/estiloform.css">
+    
+</head>
+<body>
+    <header class="menú">
+        <div class="wrapper">
+            <nav>
+                <a href="/html/Index.html">Inicio</a>
+                <a href="/html/integrantes.html">Equipo</a>
+                <a href="/html/Formulario.html">Registro</a>
+                <a href="/html/login.html">Login</a>
+            </nav>
+        </div>
+</header>
+    
+   
+</head>
 
-    <!-- Required meta tags -->
-    <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-    <title>Formulario</title>
+    
+    <form method="POST" action="informacion.php">
+        <div class="imagen">
+            <section class="container">
+                <article>
+                    <img src="/img/compu_web.png" alt="desarrolladores">
+                </article>
+            </section>
+           
+        </div>
+        <h2>Seguí el proceso del proyecto,</h2>
+        <h2>completando el formulario de registro.</h2>
+        <br><br>
+        <h3>Datos personales</h3>
+        <br>
+        <label for="nombre">Nombre:</label><br>
+<input type="text" name= "nombre" id="nombre"><br>
 
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="css/animate.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <link href="css/owl.carousel.css" rel="stylesheet" type="text/css" />
-    <link href="css/owl.theme.default.css" rel="stylesheet" type="text/css" />
-      <!-- Bootstrap CSS -->
-      <link href="css/style_1.css" rel="stylesheet" type="text/css" />
-      
-  
- 
- </head>
- 
- <body>
-   <header>
-     <!-- Logo y menú -->
- 
- <body>
-   <div class="container-fluid fh5co_header_bg">
-       <div class="container">
-           <div class="row">
-               <div class="col-12 fh5co_mediya_center"><a href="#" class="color_fff fh5co_mediya_setting"><i
-                           class="fa fa-clock-o"></i>&nbsp;&nbsp;&nbsp;Octubre 2021</a>
- 
-               </div>
- 
-           </div>
-       </div>
-   </div>
-   </div>
-   <div class="container-fluid">
-       <div class="container">
-           <div class="row">
-               <div class="col-12 col-md-3 fh5co_padding_menu">
-                   <img src="images/Logobuenasnuevas 150px.png" alt="img" sizes="100%" />
-               </div>
-               <div class="col-12 col-md-9 align-self-center fh5co_mediya_right">
-                   <div class="text-center d-inline-block">
-                       <a class="fh5co_display_table">
-                           <div class="fh5co_verticle_middle"><i class="fa fa-search"></i></div>
-                       </a>
-                   </div>
- 
-                   <div class="text-center d-inline-block">
-                       <a href="https://twitter.com/fh5co" target="_blank" class="fh5co_display_table">
-                           <div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div>
-                       </a>
-                   </div>
-                   <div class="text-center d-inline-block">
-                       <a href="https://www.facebook.com/ipet416/" target="_blank" class="fh5co_display_table">
-                           <div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div>
-                       </a>
-                   </div>
- 
-                   <div class="clearfix"></div>
-               </div>
-           </div>
-       </div>
-   </div>
-   <div class="container-fluid bg-faded fh5co_padd_mediya padding_786">
-       <div class="container padding_786">
-           <nav class="navbar navbar-toggleable-md navbar-light ">
-               <button class="navbar-toggler navbar-toggler-right mt-3" type="button" data-toggle="collapse"
-                   data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                   aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
-               <a class="navbar-brand" href="#"><img src="images/Logobuenasnuevas 150px.png" alt="img"
-                       class="mobile_logo_width" /></a>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                   <ul class="navbar-nav mr-auto">
-                       <li class="nav-item active">
-                           <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
-                       </li>
-                       <li class="nav-item ">
-                           <a class="nav-link" href="single.html">Editorial <span class="sr-only">(current)</span></a>
-                       </li>
-                       <li class="nav-item dropdown">
-                           <a class="nav-link dropdown-toggle" href="login.html" id="dropdownMenuButton2" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false">Login <span
-                                   class="sr-only">(current)</span></a>
+<label for="apellido">Apellido:</label><br>
+<input type="text" name= "apellido" id="apellido"><br>
 
-                       </li>
-                       <li class="nav-item ">
-                           <a class="nav-link" href="Contact_us.html">Contacto <span
-                                   class="sr-only">(current)</span></a>
-                       </li>
-                       <li class="nav-item ">
-                           <a class="nav-link" href="integrantes.html">Sobre Nosotros <span
-                                   class="sr-only">(current)</span></a>
-                       </li>
-                   </ul>
-               </div>
-           </nav>
-       </div>
-   </div>
+<label for="email">Correo electrónico:</label><br>
+<input type="email" name= "email" id="email"><br>
+
+<label for="password">Ingrese su contraseña:</label><br>
+<input type="password" name= "password" id="password"><br>
+
+<label for="nacimiento">Fecha de nacimiento:</label><br>
+<input type="date" name= "nacimiento" id="nacimiento"><br><br>
+
+<p>¿Eres estudiante o profesor del ISPC?</p>
+<input type= "radio" id="Estudiante" value="Estudiante" name="estudiante">
+<label for="estudiante">Estudiante</label>
+<input type= "radio" id="Profesor" value="Profesor" name="Profesor">
+<label for="profesor">Profesor</label>
+<input type= "radio" id="ninguno" value="Ninguno" name="no">
+<label for="ninguno">Ninguno</label> <br><br>
+
+<h3>Intereses</h3>
+<input type="checkbox" id="Diseño Web" name="Intereses">
+<lavel for= diseño>Diseño Web</lavel><br>
+
+<input type="checkbox" id="Programación Frontend" name="Intereses">
+<lavel for= programaciónfrontend>Programación Frontend</lavel><br>
+
+<input type="checkbox" id="Programación Backend" name="Intereses">
+<lavel for= programaciónbackend>Programación Backend</lavel><br>
+
+<input type="checkbox" id="Administración de Base de Datos" name="Intereses">
+<lavel for= administración>Administración de Base de Datos</lavel><br>
+
+<input type="checkbox" id="Otros" name="Intereses">
+<lavel for= otros>Otros</lavel><br><br>
+
+
+<p>Provincia donde vives</p>
+
+<select id="provincia">
+    <option value="cordoba">Córdoba</option>
+    <option value="entrerios">Entre Ríos</option>
+    <option value="catamarca">Catamarca</option>
+    <option value="santaFe">Santa Fe</option>
+</select> <br><br>
+
+<input type="submit">
+<br><br>
+
+    </form>
+    
+    <center><footer>
+        <br><br> Sitio web creado por alumnos de Primer año - aula 5 - Grupo 1 de la “Tecnicatura Superior en Desarrollo Web y Aplicaciones Digitales” del ISPC
+    <br><br><br></footer></center>
+    
+    
+    
+    
+</body>
+</html>
  

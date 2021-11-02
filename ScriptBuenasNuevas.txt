@@ -1,0 +1,156 @@
+-- -----------------------------------------------------
+-- Schema buenasnuevas
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `buenasnuevas` DEFAULT CHARACTER SET utf8 ;
+USE `buenasnuevas` ;
+
+-- -----------------------------------------------------
+-- Table `buenasnuevas`.`TipoDocumento`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `buenasnuevas`.`TipoDocumento` (
+  `idTipoDocumento` INT NOT NULL,
+  `Nombre` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idTipoDocumento`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `buenasnuevas`.`Suscripcion`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `buenasnuevas`.`Suscripcion` (
+  `idTipoSuscripcion` INT NOT NULL AUTO_INCREMENT,
+  `Suscripcion` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idTipoSuscripcion`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `buenasnuevas`.`CategoriaUsuario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `buenasnuevas`.`CategoriaUsuario` (
+  `idCategoriaUsuario` INT NOT NULL AUTO_INCREMENT,
+  `Nombre` VARCHAR(45) NULL,
+  PRIMARY KEY (`idCategoriaUsuario`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `buenasnuevas`.`Pais`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `buenasnuevas`.`Pais` (
+  `idPais` INT NOT NULL,
+  `Pais` VARCHAR(45) NULL,
+  PRIMARY KEY (`idPais`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `buenasnuevas`.`Provincias`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `buenasnuevas`.`Provincias` (
+  `idProvincias` INT NOT NULL,
+  `Provincia` VARCHAR(45) NOT NULL,
+  `idPais` INT NULL,
+  PRIMARY KEY (`idProvincias`),
+  INDEX `idPais_idx` (`idPais` ASC) VISIBLE,
+  CONSTRAINT `idPais`
+    FOREIGN KEY (`idPais`)
+    REFERENCES `buenasnuevas`.`Pais` (`idPais`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `buenasnuevas`.`Ciudad`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `buenasnuevas`.`Ciudad` (
+  `idCiudad` INT NOT NULL,
+  `Ciudad` VARCHAR(45) NOT NULL,
+  `idProvincia` INT NOT NULL,
+  PRIMARY KEY (`idCiudad`),
+  INDEX `idProvincia_idx` (`idProvincia` ASC) VISIBLE,
+  CONSTRAINT `idProvincia`
+    FOREIGN KEY (`idProvincia`)
+    REFERENCES `buenasnuevas`.`Provincias` (`idProvincias`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `buenasnuevas`.`Roles`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `buenasnuevas`.`Roles` (
+  `idRol` INT NOT NULL,
+  `Rol` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idRol`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `buenasnuevas`.`Intereses`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `buenasnuevas`.`Intereses` (
+  `idIntereses` INT NOT NULL,
+  `Nombre` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idIntereses`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `buenasnuevas`.`Usuario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `buenasnuevas`.`Usuario` (
+  `idUsuario` INT NOT NULL AUTO_INCREMENT,
+  `NumeroDocumento` INT NOT NULL,
+  `Nombre` VARCHAR(45) NOT NULL,
+  `Apellido` VARCHAR(45) NOT NULL,
+  `Direccion` VARCHAR(45) NOT NULL,
+  `CorreoElectronico` VARCHAR(45) NOT NULL,
+  `FechaNacimiento` DATE NOT NULL,
+  `Clave` VARCHAR(45) NOT NULL,
+  `idCiudad` INT NOT NULL,
+  `idCategoriaUsuario` INT NOT NULL,
+  `idTipoUsuario` INT NOT NULL,
+  `idTipoDocumento` INT NOT NULL,
+  `idRol` INT NOT NULL,
+  `idIntereses` INT NOT NULL,
+  PRIMARY KEY (`idUsuario`),
+  INDEX `TipoDocumento_idx` (`idTipoDocumento` ASC) VISIBLE,
+  INDEX `idTipoUsuario_idx` (`idTipoUsuario` ASC) VISIBLE,
+  INDEX `idCategoriaUsuario_idx` (`idCategoriaUsuario` ASC) VISIBLE,
+  INDEX `idCiudad_idx` (`idCiudad` ASC) VISIBLE,
+  INDEX `idRol_idx` (`idRol` ASC) VISIBLE,
+  INDEX `fk_Usuario_Intereses1_idx` (`idIntereses` ASC) VISIBLE,
+  CONSTRAINT `TipoDocumento`
+    FOREIGN KEY (`idTipoDocumento`)
+    REFERENCES `buenasnuevas`.`TipoDocumento` (`idTipoDocumento`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `idTipoUsuario`
+    FOREIGN KEY (`idTipoUsuario`)
+    REFERENCES `buenasnuevas`.`Suscripcion` (`idTipoSuscripcion`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `idCategoriaUsuario`
+    FOREIGN KEY (`idCategoriaUsuario`)
+    REFERENCES `buenasnuevas`.`CategoriaUsuario` (`idCategoriaUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `idCiudad`
+    FOREIGN KEY (`idCiudad`)
+    REFERENCES `buenasnuevas`.`Ciudad` (`idCiudad`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `idRol`
+    FOREIGN KEY (`idRol`)
+    REFERENCES `buenasnuevas`.`Roles` (`idRol`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Usuario_Intereses1`
+    FOREIGN KEY (`idIntereses`)
+    REFERENCES `buenasnuevas`.`Intereses` (`idIntereses`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;

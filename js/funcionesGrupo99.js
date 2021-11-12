@@ -27,9 +27,26 @@ window.addEventListener('load', function () {
 
     fechaNacimiento.addEventListener('change', function () {
         if (this.value) {
-            edad.innerText = `tu edad es: ${calcularEdad(this.value)} años`;
+            edad.innerText = `Tienes ${calcularEdad(this.value)} años de edad`;
         }
     });
 
 });
 
+
+    function mOver(obj)
+    {
+    obj.innerHTML="<center><h5>¿Querés recibí en tu correo las últimas publicaciones, comentar y disfrutar de la mejor información escolar?</h5></center>"
+    }
+    
+    function mOut(obj)
+    {
+    obj.innerHTML="<h4>¡Completá con tus datos y dale click al botón enviar!</h4>"
+    }
+    
+    
+    function pregunta() {
+        if (confirm('¿Estas seguro de enviar este formulario?')) {
+            document.tuformulario.submit()
+        }
+    }

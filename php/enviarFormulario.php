@@ -9,6 +9,19 @@
 </head>
 <body>
     
+    
+<meta http-equiv="Refresh" content="5;URL=index.html
+">
+</head>
+
+    
+
+<center> <h2>Bienvenido a</h2></center>
+<center><img src="images/logoparaamarillo.png" alt="logo" width="50%"></center>
+<br>
+
+
+
 <?php
 
 $nombre=$_POST["Nombre"];
@@ -54,6 +67,9 @@ mysqli_close($con);
 
 s
 ?>
+
+
+<center> <h5>Serás redirigido en unos segundos...</h5></center>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

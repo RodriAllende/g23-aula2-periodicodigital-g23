@@ -47,18 +47,18 @@
                     <div class="col-md-3" id="nombre1">
                         <label for="Nombre" class="form-label">Nombre</label>
                         <input type="text" class="form-select is-invalid" name="Nombre" 
-                        onkeypress="return soloLetras(event)" onpaste=" return false" placeholder="Ingrese su nombre"  min="2" max="15" required>
+                        onkeypress="return soloLetras(event)" onpaste=" return false" placeholder="Ingrese su nombre"  minlength="2" maxlength="15" required>
                         <div class="valid-feedback text-secondary">Campo correcto</div>
-                        <div class="invalid-feedback  text-dark">Rellene el campo por favor</div>
+                        <div class="invalid-feedback  text-dark">Minimo 2 Caracteres</div>
                     </div>
 
                     <div class="col-md-3" id="apellido1">
                         <label for="Apellido" class="form-label">Apellido</label>
                         <input type="text" class="form-select is-invalid" name="Apellido" 
-                        onkeypress="return soloLetras(event)" onpaste=" return false" placeholder="Ingrese su apellido" min="2" max="15"
+                        onkeypress="return soloLetras(event)" onpaste=" return false" placeholder="Ingrese su apellido" minlength="2" maxlength="15"
                             required>
                         <div class="valid-feedback text-secondary">Campo correcto</div>
-                        <div class="invalid-feedback text-dark">Rellene el campo por favor</div>
+                        <div class="invalid-feedback text-dark">Minimo 2 Caracteres</div>
                     </div>
 
                     <div class="col-md-3" id="correo1">

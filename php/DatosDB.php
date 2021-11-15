@@ -1,7 +1,6 @@
 <?php
-
 $host="localhost"
-$usuario= "administrador"
+$usuario="administrador"
 $clave="bn2021"
 $basededatos="BuenasNuevasPeriodico"
 
@@ -11,4 +10,5 @@ $conn =new mysqli($host, $usuario, $clave ,$basededatos);
     if($conn->connect_error){
         die("Database error: ").$conn->connect_error);
     }
+
     ?>

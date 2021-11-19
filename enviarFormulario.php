@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos Formulario</title>
-    <meta http-equiv="Refresh" content="5;URL=index.html">
-
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/formulario.css">
+    <meta http-equiv="Refresh" content="15;URL=index.html">
+    <link rel="stylesheet" href="css\formulario.css">
 
 </head>
 <body>
+    <p> <a href="Formulario.html"> Regresar</a> </p>
+    <input type="button" value="Volver" onclick="pVolver();"><br>
 
+    <input type="button" value="Submit" id="submit" onclick="paginaredirect();"><br/>
+
+    <div id="mensaje"></div>
 
 <center> <h2>Bienvenido a</h2></center>
 <center><img src="images/logoparaamarillo.png" alt="logo" width="50%"></center>
@@ -22,50 +23,49 @@
 
 
 
+
 <?php
 
-$nombre=$_POST["Nombre"];
-$apellido=$_POST["Apellido"];
-$email=$_POST["Correo"];
-$tipoDocumento=$_POST["TipoDocumento"];
-$documento=$_POST["Documento"];
-$nacimiento=$_POST["fechaNacimiento"];
-$intereses=$_POST["Intereses"];
-$tipoSuscripcion=$_POST["TipoSuscripcion"];
-$pais=$_POST["Pais1"];
-$provincia=$_POST["Provincia"];
-$password=$_POST["password"];
+$nombre=$_POST["Nombre"] ?? "";
+$apellido=$_POST["Apellido"] ?? "";
+$email=$_POST["Correo"] ?? "";
+$tipoDocumento=$_POST["TipoDocumento"] ?? "";
+$documento=$_POST["Documento"] ?? "";
+$nacimiento=$_POST["nacimiento"] ?? "";
+$intereses=$_POST["Intereses"] ?? "";
+$tipoSuscripcion=$_POST["TipoSuscripcion"] ?? "";
+$pais=$_POST["Pais1"] ?? "";
+$provincia=$_POST["Provincia"] ?? "";
+$password=$_POST["password"] ?? "";
 
 
-print "<p>Bienvenido/a <strong>$nombre +" "+ $apellido</strong>.</p>\n";
-print "\n";
-print "<p>Su documento es <strong>$documento</strong>.</p>\n";
-print "\n";
-print "<p>Su eMail es <strong>$email</strong>.</p>\n";
-print "\n";
+echo "<h2> <strong>$nombre + $apellido</strong></h2>";
+echo "<h2>Su documento es <strong>$documento</strong></h2>\n";
+echo "\n";
+echo"<p>Su eMail es <strong>$email</strong>.</p>\n";
+echo "\n";
 
 
 //Incluimos los datos de conexión y las funciones.
 
-include("datosDB.php");
-$con = misqli_connect($host,$usuario,$clave,$basededatos) or die ("no se puede conectar al servidor de la base de datos");
+include("DatosDB.php");
+$con = mysqli_connect($host,$usuario,$clave,$basededatos) or die ("no se puede conectar al servidor de la base de datos");
 if (!$con){
     die("conexión fallida: ". mysqli_connect_error());
 }
 
-$db = mysqli_select_db($con,$basededatos) or die ( "Error, No se ha podido conectar a la base de datos";)
-$consulta = "INSERT INTO Usuario( Nombre, Apellido,CorreoElectronico,NumeroDocumento,FechaNacimiento, Clave) VALUES ('$nombre','$apellido','$email','$documento',
-'$nacimiento', '$password')";
+$db = mysqli_select_db($con,$basededatos) or die ( "Error, No se ha podido conectar a la base de datos");
+$consulta = "INSERT INTO usuario (Nombre, Apellido, CorreoElectronico, NumeroDocumento, FechaNacimiento, Clave) VALUES ('$nombre','$apellido','$email','$documento','$nacimiento', '$password')";
 
 if(mysqli_query ($con, $consulta)){
     echo "<p>Registro Agregado</p> ";
-} else {
+    } else {
     echo "<p>No se agrgó nuevo registro</p>";
-    echo "Error:" . $consulta . "<br>" . mysqli_error($scon);
+    echo "Error:" .$consulta . "<br>" . mysqli_error($con);
 }
 mysqli_close($con);
 
-s
+
 ?>
 
 

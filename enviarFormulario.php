@@ -5,23 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos Formulario</title>
-    <meta http-equiv="Refresh" content="15;URL=index.html">
+    <meta http-equiv="Refresh" content="90;URL=index.html">
     <link rel="stylesheet" href="css\formulario.css">
 
 </head>
 <body>
-    <p> <a href="Formulario.html"> Regresar</a> </p>
-    <input type="button" value="Volver" onclick="pVolver();"><br>
-
-    <input type="button" value="Submit" id="submit" onclick="paginaredirect();"><br/>
-
-    <div id="mensaje"></div>
 
 <center> <h2>Bienvenido a</h2></center>
 <center><img src="images/logoparaamarillo.png" alt="logo" width="50%"></center>
 <br>
-
-
 
 
 <?php
@@ -34,12 +26,12 @@ $documento=$_POST["Documento"] ?? "";
 $nacimiento=$_POST["nacimiento"] ?? "";
 $intereses=$_POST["Intereses"] ?? "";
 $tipoSuscripcion=$_POST["TipoSuscripcion"] ?? "";
-$pais=$_POST["Pais1"] ?? "";
-$provincia=$_POST["Provincia"] ?? "";
+$pais=$_POST["pais"] ?? "";
+$provincia=$_POST["provincia"] ?? "";
 $password=$_POST["password"] ?? "";
 
 
-echo "<h2> <strong>$nombre + $apellido</strong></h2>";
+echo "<h2> <strong>$nombre $apellido</strong></h2>";
 echo "<h2>Su documento es <strong>$documento</strong></h2>\n";
 echo "\n";
 echo"<p>Su eMail es <strong>$email</strong>.</p>\n";
@@ -55,7 +47,7 @@ if (!$con){
 }
 
 $db = mysqli_select_db($con,$basededatos) or die ( "Error, No se ha podido conectar a la base de datos");
-$consulta = "INSERT INTO usuario (Nombre, Apellido, CorreoElectronico, NumeroDocumento, FechaNacimiento, Clave) VALUES ('$nombre','$apellido','$email','$documento','$nacimiento', '$password')";
+$consulta = "INSERT INTO usuario (Nombre, Apellido,tipoDocumento, NumeroDocumento, FechaNacimiento,intereses, tipoSuscripcion, Pais,Provincia, CorreoElectronico, Clave) VALUES ('$nombre','$apellido','$tipoDocumento','$documento','$nacimiento','$intereses','$tipoSuscripcion', '$pais', '$provincia','$email','$password')";
 
 if(mysqli_query ($con, $consulta)){
     echo "<p>Registro Agregado</p> ";

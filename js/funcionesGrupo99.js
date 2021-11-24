@@ -159,7 +159,7 @@ function confirmEnvio() {
   });
   myForm.reset()
   setTimeout(function redirect(){
-    window.location.href='php/enviarFormulario.php', false;
+    window.location.href='enviarFormulario.php', false;
 }, 4500);
 }
 

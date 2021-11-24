@@ -62,7 +62,7 @@
                         </a>
                     </div>
                     <div class="text-center d-inline-block">
-                        <a href="login.html" class="fh5co_display_table">
+                        <a href="login.php" class="fh5co_display_table">
                             <div class="fh5co_verticle_middle"><i class="fa fa-user-circle"></i></div>   
                         </a>
                     </div>
@@ -140,7 +140,8 @@
                 <span class="glyphicon glyphicon-user"></span>
             </div>
             <div class="ContentForm">
-                <form action="" method="post" name="FormEntrar">
+
+                <form action="bienvenidaLogin.php" method="post" name="FormEntrar">
                     <div class="input-group input-group-lg">
                         <span class="input-group-addon" id="sizing-addon1"><i
                                 class="glyphicon glyphicon-envelope"></i></span>
@@ -150,16 +151,22 @@
                     <br>
                     <div class="input-group input-group-lg">
                         <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input type="password" name="contra" class="form-control" placeholder="**"
+                        <input type="password" name="password" class="form-control" placeholder="**"
                             aria-describedby="sizing-addon1" required>
                     </div>
                     <br>
                     <button class="btn btn-lg btn-primary btn-block btn-signin" id="IngresoLog"
                         type="submit">Entrar</button>
-                    <div class="opcioncontra"><a href="">Olvidaste tu contraseña?</a></div>
+                    <div class="opcioncontra"><a href="Formulario.html">Si no esta Registrado Presione aqui!!</a></div>
     
                 </form>
-    
+
+
+            
+
+
+
+                
     
                 <!-- vinculando a libreria Jquery-->
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -248,7 +255,7 @@
                     <div class="col-12 col-md-6 spdp_right py-4">
                         <a href="index.html" class="footer_last_part_menu">Inicio</a>
                         <a href="single.html" class="footer_last_part_menu">Editorial</a>
-                        <a href="login.html" class="footer_last_part_menu">Login</a>
+                        <a href="login.php" class="footer_last_part_menu">Login</a>
                     </div>
                 </div>
             </div>

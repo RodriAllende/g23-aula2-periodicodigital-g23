@@ -55,7 +55,7 @@
                     <div class="text-center d-inline-block">
                     </div>
                     <div class="text-center d-inline-block">
-                        <a href="Formulario.html" class="fh5co_display_table">
+                        <a href="formulario.html" class="fh5co_display_table">
                             <div class="fh5co_verticle_middle"><img src="images\Suscribirseanimado2.gif" width="250px"
                                     back alt="suscribete">
                                     
@@ -157,7 +157,7 @@
                     <br>
                     <button class="btn btn-lg btn-primary btn-block btn-signin" id="IngresoLog"
                         type="submit">Entrar</button>
-                    <div class="opcioncontra"><a href="Formulario.html">Si no esta Registrado Presione aqui!!</a></div>
+                    <div class="opcioncontra"><a href="formulario.html">Si no esta Registrado Presione aqui!!</a></div>
     
                 </form>
 

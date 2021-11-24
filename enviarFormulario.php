@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos Formulario</title>
-    <meta http-equiv="Refresh" content="90;URL=index.html">
+    <meta http-equiv="Refresh" content="7;URL=index.html">
     <link rel="stylesheet" href="css\formulario.css">
 
 </head>

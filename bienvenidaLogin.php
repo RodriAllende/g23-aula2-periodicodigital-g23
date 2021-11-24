@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos Formulario</title>
     <meta http-equiv="Refresh" content="5;URL=index.html">
-    <link rel="stylesheet" href="css\formulario.css">
+    <link rel="stylesheet" href="css\formulario.css"> 
 
 </head>
 <body>
@@ -47,7 +47,7 @@ if(isset($_POST['correo'])){
             // 7. Comparo cantidad de registros encontrados
             if($filas == 0){
                 echo "<script>alert('Error: usuario y/o clave incorrectos, Intente nuevamente');</script>";
-                header('login.php');
+        
             }else{
                 echo "<script>alert('Usted se ha logueado correctamente, presione aceptar para continuar');</script>";
             }
